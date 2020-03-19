@@ -19,7 +19,7 @@ dlib==19.17.0
 entrypoints==0.3
 face-recognition==1.2.3
 face-recognition-models==0.3.0
-Flask==0.12.4
+Flask==1.0
 Flask-Bcrypt==0.7.1
 Flask-JWT==0.3.2
 Flask-JWT-Extended==3.7.2
