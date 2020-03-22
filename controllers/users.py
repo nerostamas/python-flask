@@ -32,10 +32,24 @@ def create_user():
         return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
 
-@user_api.route("/getAll", methods=['GET'])
+@user_api.route("/all", methods=['GET'])
 @jwt_required
 def get_all_user():
     users = User.objects()
+    return jsonify(users), 200
+
+
+@user_api.route("/getByIds", methods=['POST'])
+@jwt_required
+def get_user_by_ids():
+    body = request.get_json()
+    if body is None:
+        return jsonify({'message': 'Please provide ids'}), 400
+    ids = body.get('ids', [])
+    try:
+        users = User.objects(id__in=ids)
+    except ValidationError:
+        return jsonify({'message': 'Invalid Ids'}), 400
     return jsonify(users), 200
 
 

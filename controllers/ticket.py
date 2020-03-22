@@ -39,6 +39,20 @@ def get_all_ticket():
     return jsonify(tickets)
 
 
+@ticket_api.route("/byId/<id>", methods=['GET'])
+def get_by_id(id):
+    if id is None:
+        return jsonify({'message': 'Invalid Id'}), 400
+    try:
+        ticket = Ticket.objects.get(id=id)
+    except errors.ValidationError:
+        return jsonify({'message': 'Validate error'}), 400
+    except errors.DoesNotExist:
+        return jsonify({'message': 'Ticket not found'}), 400
+
+    return jsonify(ticket), 200
+
+
 @ticket_api.route("/findMyTicket", methods=["GET"])
 @jwt_required
 def find_my_ticlet():

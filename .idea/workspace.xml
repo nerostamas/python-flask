@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8c1d5fc-b133-48e2-9f96-1bcd0b61b4f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/comment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ticket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/mongodb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helper/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helper/timeUtils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/testAuth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/handleAuth.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ticket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testAuth.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/testAuth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +42,7 @@
       <recent name="$PROJECT_DIR$/auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for testAuth.AuthTestCase.test_loginSuccess">
+  <component name="RunManager" selected="Python.run">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="be" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,10 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python tests.Unittests for testAuth.AuthTestCase" />
         <item itemvalue="Python tests.Unittests for testAuth.AuthTestCase.test_loginSuccess" />
         <item itemvalue="Python tests.Unittests for testAuth.AuthTestCase.test_loginFailed" />
-        <item itemvalue="Python tests.Unittests for testAuth.AuthTestCase" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Flask server.Flask (run.py)" />
       </list>
     </recent_temporary>
@@ -176,7 +163,9 @@
       <workItem from="1584624141402" duration="12522000" />
       <workItem from="1584686456139" duration="183000" />
       <workItem from="1584696039230" duration="2168000" />
-      <workItem from="1584702794312" duration="16657000" />
+      <workItem from="1584702794312" duration="17085000" />
+      <workItem from="1584771159392" duration="843000" />
+      <workItem from="1584808837447" duration="7048000" />
     </task>
     <servers />
   </component>
@@ -197,45 +186,45 @@
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
     <state x="1912" y="203" key="#xdebugger.evaluate/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584726035329" />
-    <state width="1569" height="280" key="GridCell.Tab.0.bottom" timestamp="1584728790078">
+    <state width="1569" height="345" key="GridCell.Tab.0.bottom" timestamp="1584862472663">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="280" key="GridCell.Tab.0.bottom/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728790078" />
+    <state width="1569" height="345" key="GridCell.Tab.0.bottom/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472663" />
     <state width="1569" height="280" key="GridCell.Tab.0.bottom/56.23.1624.1027@56.23.1624.1027" timestamp="1584638748321" />
-    <state width="1569" height="280" key="GridCell.Tab.0.center" timestamp="1584728790078">
+    <state width="1569" height="345" key="GridCell.Tab.0.center" timestamp="1584862472662">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="280" key="GridCell.Tab.0.center/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728790078" />
+    <state width="1569" height="345" key="GridCell.Tab.0.center/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472662" />
     <state width="1569" height="280" key="GridCell.Tab.0.center/56.23.1624.1027@56.23.1624.1027" timestamp="1584638748320" />
-    <state width="1569" height="280" key="GridCell.Tab.0.left" timestamp="1584728790077">
+    <state width="1569" height="345" key="GridCell.Tab.0.left" timestamp="1584862472661">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="280" key="GridCell.Tab.0.left/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728790077" />
+    <state width="1569" height="345" key="GridCell.Tab.0.left/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472661" />
     <state width="1569" height="280" key="GridCell.Tab.0.left/56.23.1624.1027@56.23.1624.1027" timestamp="1584638748320" />
-    <state width="1569" height="280" key="GridCell.Tab.0.right" timestamp="1584728790078">
+    <state width="1569" height="345" key="GridCell.Tab.0.right" timestamp="1584862472662">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="280" key="GridCell.Tab.0.right/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728790078" />
+    <state width="1569" height="345" key="GridCell.Tab.0.right/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472662" />
     <state width="1569" height="280" key="GridCell.Tab.0.right/56.23.1624.1027@56.23.1624.1027" timestamp="1584638748321" />
-    <state width="1569" height="345" key="GridCell.Tab.1.bottom" timestamp="1584728747792">
+    <state width="1569" height="345" key="GridCell.Tab.1.bottom" timestamp="1584862472592">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="345" key="GridCell.Tab.1.bottom/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728747792" />
+    <state width="1569" height="345" key="GridCell.Tab.1.bottom/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472592" />
     <state width="1569" height="345" key="GridCell.Tab.1.bottom/56.23.1624.1027@56.23.1624.1027" timestamp="1584635240527" />
-    <state width="1569" height="345" key="GridCell.Tab.1.center" timestamp="1584728747792">
+    <state width="1569" height="345" key="GridCell.Tab.1.center" timestamp="1584862472591">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="345" key="GridCell.Tab.1.center/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728747792" />
+    <state width="1569" height="345" key="GridCell.Tab.1.center/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472591" />
     <state width="1569" height="345" key="GridCell.Tab.1.center/56.23.1624.1027@56.23.1624.1027" timestamp="1584635240526" />
-    <state width="1569" height="345" key="GridCell.Tab.1.left" timestamp="1584728747792">
+    <state width="1569" height="345" key="GridCell.Tab.1.left" timestamp="1584862472590">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="345" key="GridCell.Tab.1.left/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728747792" />
+    <state width="1569" height="345" key="GridCell.Tab.1.left/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472590" />
     <state width="1569" height="345" key="GridCell.Tab.1.left/56.23.1624.1027@56.23.1624.1027" timestamp="1584635240526" />
-    <state width="1569" height="345" key="GridCell.Tab.1.right" timestamp="1584728747792">
+    <state width="1569" height="345" key="GridCell.Tab.1.right" timestamp="1584862472592">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state width="1569" height="345" key="GridCell.Tab.1.right/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584728747792" />
+    <state width="1569" height="345" key="GridCell.Tab.1.right/1680.23.1920.1057/56.23.1624.1027@1680.23.1920.1057" timestamp="1584862472592" />
     <state width="1569" height="345" key="GridCell.Tab.1.right/56.23.1624.1027@56.23.1624.1027" timestamp="1584635240526" />
     <state x="2475" y="172" width="639" height="729" key="find.popup" timestamp="1584722993060">
       <screen x="1680" y="23" width="1920" height="1057" />
@@ -248,10 +237,11 @@
     <state x="539" y="250" width="670" height="676" key="search.everywhere.popup/56.23.1624.1027@56.23.1624.1027" timestamp="1584636878121" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/be$Unittests_for_testAuth_AuthTestCase.coverage" NAME="Unittests for testAuth.AuthTestCase Coverage Results" MODIFIED="1584723895578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/be$Unittests_for_testAuth_AuthTestCase.coverage" NAME="Unittests for testAuth.AuthTestCase Coverage Results" MODIFIED="1584728983246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/be$run.coverage" NAME="run Coverage Results" MODIFIED="1584862472560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$Unittests_for_testAuth_AuthTestCase_test_loginFailed.coverage" NAME="Unittests for testAuth.AuthTestCase.test_loginFailed Coverage Results" MODIFIED="1584728747774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/be$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1584719659038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$app.coverage" NAME="app Coverage Results" MODIFIED="1584722607027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$app.coverage" NAME="run Coverage Results" MODIFIED="1584728965336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$Unittests_for_testAuth_AuthTestCase_test_loginSuccess.coverage" NAME="Unittests for testAuth.AuthTestCase.test_loginSuccess Coverage Results" MODIFIED="1584728790068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>

@@ -21,7 +21,7 @@ class AuthTestCase(unittest.TestCase):
         db.disconnect()
         db.connect('sample_test')
         User.drop_collection()
-        app.register_blueprint(auth_api, url_prefix='/auth')
+        app.register_blueprint(auth_api, url_prefix='/api/auth')
 
     def test_loginFailed(self):
         response = self.app.post('/auth/login',
