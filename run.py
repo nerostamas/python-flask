@@ -1,3 +1,7 @@
+import os
+
+from flask import send_from_directory
+
 from app.config import app
 
 # router
@@ -11,6 +15,7 @@ app.register_blueprint(auth_api, url_prefix='/api/auth')
 app.register_blueprint(user_api, url_prefix='/api/users')
 app.register_blueprint(ticket_api, url_prefix='/api/ticket')
 app.register_blueprint(comment_api, url_prefix='/api/comment')
+
 
 if __name__ == '__main__':
     app.run()

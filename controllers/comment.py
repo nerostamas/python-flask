@@ -26,16 +26,24 @@ def create_comment(ticket_id):
     return jsonify(comment), 200
 
 
-@comment_api.route("/<ticket_id>", methods=['GET'])
+@comment_api.route("/view/<ticket_id>", methods=['POST'])
 @jwt_required
 def get_comment(ticket_id):
     validate_ticket(ticket_id)
     try:
-        comment = Comment.objects.filter(ticketId=ticket_id)
+        body = request.get_json()
+        page_size = 10
+        page = 1
+        if body is not None:
+            page_size = body.get('pageSize', page_size)
+            page = body.get('page', page)
+        comments = Comment.objects.order_by('-createTime').filter(ticketId=ticket_id).paginate(page=page, per_page=page_size)
     except errors.ValidationError:
         return jsonify({'message': 'error validate'}), 400
 
-    return jsonify(comment), 200
+    return jsonify({'data': comments.items, 'has_next': comments.has_next, \
+                    'has_prev': comments.has_prev, 'next_num': comments.next_num, \
+                    'pages': comments.pages, 'page': comments.page, 'total': comments.total}), 200
 
 
 @comment_api.route("/<comment_id>", methods=['DELETE'])
@@ -47,6 +55,9 @@ def delete_my_comment(comment_id):
         return jsonify({'message': 'Invalid comment Id'}), 400
     except errors.DoesNotExist:
         return jsonify({'message': 'Comment not found'}), 400
+    user_id = get_jwt_identity()
+    if comment.userId is not user_id:
+        return jsonify({'message': 'You can not delete other comment !'}), 403
 
     comment.delete()
     return jsonify({'ok': True}), 200
