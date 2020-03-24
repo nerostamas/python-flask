@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    environment:
+      - FLASK_RUN_PORT=8080
+      - MONGO_DB=sample
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+
+  mongodb:
+    image: mongo:latest
+
+  mongo_seed:
+    image: mongo:latest
+    links:
+      - mongodb
+    volumes:
+      - ./importer:/mongo-seed
+    command:
+      /mongo-seed/import.sh
+    environment:
+      - MONGO_DB=sample
+
+
+  mongoadm:
+    image: mongo-express
+    ports:
+    - 8081:8081
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    environment:
+      - PASSWORD="P@ssword"
+      - ME_CONFIG_MONGODB_SERVER=mongodb

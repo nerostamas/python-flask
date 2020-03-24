@@ -1,10 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from mongoengine import errors
-
-from helper.timeUtils import current_milli_time
-
 from database.models import Ticket, Comment
+from helper.time import current_milli_time
 
 comment_api = Blueprint('comment_api', __name__)
 
@@ -12,14 +10,16 @@ comment_api = Blueprint('comment_api', __name__)
 @comment_api.route("/<ticket_id>", methods=['POST'])
 @jwt_required
 def create_comment(ticket_id):
-    validate_ticket(ticket_id)
+    error = validate_ticket(ticket_id)
+    if error is not None:
+        return error
     body = request.get_json()
     if body is None:
         return jsonify({'message': "content can not empty"}), 400
-    user_id = get_jwt_identity()
     content = body.get('content', None)
     if content is None:
         return jsonify({'message': "content can not empty"}), 400
+    user_id = get_jwt_identity()
     comment = Comment(userId=user_id, content=content, createTime=current_milli_time(), ticketId=ticket_id) \
         .save()
 
@@ -29,8 +29,10 @@ def create_comment(ticket_id):
 @comment_api.route("/view/<ticket_id>", methods=['POST'])
 @jwt_required
 def get_comment(ticket_id):
-    validate_ticket(ticket_id)
     try:
+        error = validate_ticket(ticket_id)
+        if error is not None:
+            return error
         body = request.get_json()
         page_size = 10
         page = 1
@@ -64,9 +66,12 @@ def delete_my_comment(comment_id):
 
 
 def validate_ticket(ticket_id):
+    error = None
     try:
         Ticket.objects.get(id=ticket_id)
     except errors.ValidationError:
-        return jsonify({'message': 'Invalid Ticket Id'}), 400
+        error = jsonify({'message': 'Invalid Ticket Id'}), 400
     except errors.DoesNotExist:
-        return jsonify({'message': 'Not found Ticket'}), 400
+        error = jsonify({'message': 'Not found Ticket'}), 400
+
+    return error

@@ -38,9 +38,15 @@ def login():
     username = body.get('username', None)
     password = body.get('password', None)
 
+    if username == '':
+        return jsonify({'message': 'Username can not be blank'}), 401
+    if password == '':
+        return jsonify({'message': 'Password can not be blank'}), 401
+
     # Create the tokens we will be sending back to the user
+    nor_username = username.strip().lower()
     try:
-        user = User.objects.get(username=username)
+        user = User.objects.get(username=nor_username)
     except errors.DoesNotExist:
         return jsonify({'message': 'username or password is not match'}), 401
 

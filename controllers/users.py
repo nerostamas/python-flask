@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims, get_jwt_identity
 from mongoengine import NotUniqueError, ValidationError, DoesNotExist
 
 from database.models import User, ROLE
@@ -7,9 +7,28 @@ from database.models import User, ROLE
 user_api = Blueprint('user_api', __name__)
 
 
+@user_api.route("/my", methods=['GET'])
+@jwt_required
+def get_my_info():
+    role = get_jwt_claims()['role']
+    user_id = get_jwt_identity()
+    try:
+        user = User.objects.get(id=user_id)
+    except ValidationError:
+        return jsonify({'message': 'Invalid User Id'}), 400
+    except DoesNotExist:
+        return jsonify({'message': 'Not found user'}), 400
+
+    return jsonify({'username': user.username, '_id': user_id, 'role': role}), 200
+
+
 @user_api.route("/create", methods=['POST'])
 @jwt_required
 def create_user():
+    role = get_jwt_claims()['role']
+    if role not in ROLE or role == 'USER':
+        return jsonify({'message': 'Permission denied'}), 403
+
     data = request.get_json()
     username = data.get('username', None)
     password = data.get('password', None)
@@ -18,10 +37,15 @@ def create_user():
             and password is not None \
             and role is not None:
         try:
+            if len(username) < 3:
+                return jsonify({'message': 'username must greater than 3 characters'}), 400
+            nor_username = username.strip().lower()
+            if nor_username.find(' ') != -1:
+                return jsonify({'message': 'username should not have space'}), 400
             if role not in ROLE:
-                return jsonify({'message': 'invalid role'})
+                return jsonify({'message': 'invalid role'}), 400
 
-            user = User(**data)
+            user = User(username=nor_username, password=password, role=role)
             user.hash_password()
             user.save()
 
@@ -51,18 +75,3 @@ def get_user_by_ids():
     except ValidationError:
         return jsonify({'message': 'Invalid Ids'}), 400
     return jsonify(users), 200
-
-
-@user_api.route("/update/<id>", methods=['PUT'])
-@jwt_required
-def update_user(id):
-    body = request.get_json()
-    try:
-        User.objects.get(id=id).update(**body)
-    except ValidationError:
-        return jsonify({'message': 'Invalid data'}), 400
-    except DoesNotExist:
-        return jsonify({'message': 'Not found data'}), 400
-    except NotUniqueError:
-        return jsonify({'message': "username existed"}), 400
-    return '', 200
