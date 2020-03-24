@@ -58,7 +58,7 @@ def delete_my_comment(comment_id):
     except errors.DoesNotExist:
         return jsonify({'message': 'Comment not found'}), 400
     user_id = get_jwt_identity()
-    if comment.userId is not user_id:
+    if comment.userId != user_id:
         return jsonify({'message': 'You can not delete other comment !'}), 403
 
     comment.delete()
