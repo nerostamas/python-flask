@@ -14,4 +14,6 @@ The app have some basic unit test to validate features, please take a look at te
 - testUser
 - testTicketAndComment
 
+You also view the database at http://localhost:8081 (default database will have name `sample` and you can change in `docker-compose.yml`)
+
 Tech stack: `reactjs` `flask` `mongodb` `Docker`
