@@ -1,4 +1,4 @@
-Flask_Cors==3.0.8
+Flask_Cors==3.0.9
 mongoengine==0.19.1
 flask_mongoengine==0.9.5
 Flask_Bcrypt==0.7.1
